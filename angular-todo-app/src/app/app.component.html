@@ -1,0 +1,23 @@
+<div class="page">
+  <nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">Todo App</a>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <form>
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" id="title" class="form-control" [(ngModel)]="todoTitle" name="todoTitle">
+      </div>
+      <input type="button" class="add btn btn-primary" value="Save" (click)="addNew()">
+    </form>
+
+    <div class="tasks-list mt-5">
+      <div class="task-list-item mb-3" *ngFor="let todo of todoList">
+        <app-todo [todo]="todo"></app-todo>
+      </div>
+    </div>
+  </div>
+</div>
